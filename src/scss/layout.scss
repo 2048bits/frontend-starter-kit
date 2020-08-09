@@ -10,3 +10,26 @@
     margin-bottom: 10px;
   }
 }
+
+.main {
+  height: calc(100vh - 200px);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+
+  > img {
+    height: 80px;
+
+    &:first-child {
+      margin-right: 5px;
+    }
+
+    &:last-child {
+      margin-left: 5px;
+    }
+  }
+}

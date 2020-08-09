@@ -18,6 +18,14 @@ module.exports = {
         exclude: [/node_modules/]
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.html$/i,
+        use: ['html-loader'],
+      },
+      {
         test: /\.(sa|sc|c)ss$/,
         use: [{
           loader: 'style-loader'
