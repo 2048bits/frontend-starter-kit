@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 require('babel-polyfill');
 
 module.exports = {
-  entry: ['babel-polyfill', __dirname + '/src/js/index.js'],
+  entry: [__dirname + '/src/js/index.ts'],
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js',
@@ -13,9 +13,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: [/node_modules/]
+        test: /\.ts$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -46,6 +46,9 @@ module.exports = {
         })
       }
     ]
+  },
+  resolve: {
+    extensions: [ '.ts', '.js' ],
   },
   plugins: [
     new HtmlWebpackPlugin({
